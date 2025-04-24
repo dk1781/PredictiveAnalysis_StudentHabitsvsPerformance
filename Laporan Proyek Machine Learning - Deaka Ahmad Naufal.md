@@ -96,16 +96,21 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
  
 ## Data Preparation
 - Map Exam Score
+  
 	Memetakan kolom Exam Score menjadi "Pass" dan "Faill" untuk  dijadikan targer klasifikasi dimana exam_score >= 70 adalah "Pass"
 - Encoding Feature Kategorikal
+  
 	fitur kategori yang bertipe object di rubah menjadi numerik agar model mengenali data kategorikal
 - Feature Selection
+  
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424231629.png">
  
 	Kolom study_hours_per_day,mental_health_rating, screen_time dipilih karena memiliki nilai korelasi yang paling tinggi baik itu positif atau negatif. itu artinya Fitur inilah yang paling berpengaruh pada kelulusan
 - Split dataset
+  
 	Membagi dataset menjadi train dan test dengan rasio 80 : 20 dilakukan guna melakukan tahap training pada model menggunakan data train, lalu melakukan tahap evaluasi menggunakan data test
 - Standarisasi
+  
 	Melakukan Standarisasi menggunakan standar scaller agar algoritma tidak terpengaruh oleh perbedaan skala antar fitur
 
 ## Modeling
@@ -255,5 +260,7 @@ Berdasarkan Hasil Evaluasi pada data test Model terbaik adalah Logistic Regressi
 
 ## REFERENSI
 [1]Ashfaq, U., M, B. P., & Mafas, R. (2020). Managing Student Performance: A Predictive Analytics using Imbalanced Data. _International Journal of Recent Technology and Engineering (IJRTE)_, _8_(6), 2277–2283. https://doi.org/10.35940/ijrte.e7008.038620
+
 [2]A. Rahman, “Klasifikasi Performa Akademik Siswa Menggunakan Metode Decision Tree dan Naive Bayes,” _saintekom_, vol. 13, no. 1, hlm. 22–31, Mar 2023, doi: [10.33020/saintekom.v13i1.349](https://doi.org/10.33020/saintekom.v13i1.349).
+
 [3]Dicoding. Diakses pada 23 April 2025 dari https://www.dicoding.com/academies/184/tutorials/38763
