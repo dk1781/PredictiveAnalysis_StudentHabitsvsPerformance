@@ -120,15 +120,13 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 
 ---
 
-2. **Decision Tree dengan Kontrol Kompleksitas**
-	
-Algoritma berbasis pohon keputusan dengan pembagian rekursif.
-	
- Parameter:
- - max_depth=7,          # Batasi kedalaman maksimum pohon
- - min_samples_split=15, # Minimal 15 sampel untuk split node
+
+2. **Decision Tree **
+	Algoritma berbasis pohon keputusan dengan pembagian rekursif.
+	Parameter:
+	- max_depth=7,          # Batasi kedalaman maksimum pohon
+	- min_samples_split=15, # Minimal 15 sampel untuk split node
 	- random_state=42       # Reproduksibilitas struktur
-	
 	**Kelebihan**:
 	-  Menangkap hubungan non-linear
 	-  Tidak membutuhkan feature scaling
@@ -137,17 +135,16 @@ Algoritma berbasis pohon keputusan dengan pembagian rekursif.
 	- Rentan overfitting jika depth tidak diatur
 	-  Sensitif terhadap perubahan kecil data
 	    
-	---
-	
- 3. **Random Forest dengan Ensemble Optimal**
+---
+
+ 
+ 3. **Random Forest**
 	Metode ensemble berbasis pohon keputusan yang menggabungkan banyak pohon untuk meningkatkan akurasi dan mengurangi overfitting
-	
-	### Parameter:
+	Parameter:
 	- n_estimators=200,     # Jumlah pohon besar untuk stabilitas
 	- max_depth=12,         # Kedalaman fleksibel dengan kontrol
 	- min_samples_leaf=5,   # Minimal 5 sampel di leaf node
 	- random_state=42       
-	
 	**Kelebihan**:
 	- Robust terhadap noise dan outlier
 	- Fitur importance otomatis    
@@ -158,14 +155,13 @@ Algoritma berbasis pohon keputusan dengan pembagian rekursif.
 	
 	---
 	
-4. **XGBoost dengan Parameter Boosting**
+4. **XGBoost**
 	Algoritma gradient boosting yang optimalkan model bertahap.
-	### Parameter:
+	Parameter:
 	- learning_rate=0.05,   # Langkah pembelajaran presisi tinggi
 	- max_depth=4,          # Kedalaman terkontrol
 	-  n_estimators=300,     # Kompensasi learning rate kecil
 	- random_state=42       
-	
 	**Kelebihan**:
 	-  Akurasi tinggi untuk data kompleks
 	- Regularisasi bawaan (max_depth)
@@ -208,15 +204,19 @@ Algoritma berbasis pohon keputusan dengan pembagian rekursif.
 <img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424231028.png">
 
 - Logistic Regression
+  
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230654.png">
 
 - Decission Tree
+  
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230818.png">
  
 - Random Forest
+  
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230835.png">
  
 - XGBoost
+  
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230842.png">
  
 
