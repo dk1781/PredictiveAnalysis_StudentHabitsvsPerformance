@@ -109,6 +109,7 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	Melakukan Standarisasi menggunakan standar scaller agar algoritma tidak terpengaruh oleh perbedaan skala antar fitur
 
 ## Modeling
+
 1. logistic Regression
    
 **Kelebihan**:
@@ -136,56 +137,61 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	
  **Kelebihan**:
  
-	-  Menangkap hubungan non-linear
-	-  Tidak membutuhkan feature scaling
-	-  Visualisasi intuitif
+-  Menangkap hubungan non-linear
+-  Tidak membutuhkan feature scaling
+-  Visualisasi intuitif
 	
  **Kekurangan**:
-	- Rentan overfitting jika depth tidak diatur
-	-  Sensitif terhadap perubahan kecil data
+- Rentan overfitting jika depth tidak diatur
+-  Sensitif terhadap perubahan kecil data
 	    
----
+
 
  
- 3. **Random Forest**
-	Metode ensemble berbasis pohon keputusan yang menggabungkan banyak pohon untuk meningkatkan akurasi dan mengurangi overfitting
+3. **Random Forest**
+Metode ensemble berbasis pohon keputusan yang menggabungkan banyak pohon untuk meningkatkan akurasi dan mengurangi overfitting
 	
- Parameter:
-	- n_estimators=200,     # Jumlah pohon besar untuk stabilitas
-	- max_depth=12,         # Kedalaman fleksibel dengan kontrol
-	- min_samples_leaf=5,   # Minimal 5 sampel di leaf node
-	- random_state=42       
+Parameter:
+
+- n_estimators=200,     # Jumlah pohon besar untuk stabilitas
+- max_depth=12,         # Kedalaman fleksibel dengan kontrol
+- min_samples_leaf=5,   # Minimal 5 sampel di leaf node
+- random_state=42       
 	
  **Kelebihan**:
-	- Robust terhadap noise dan outlier
-	- Fitur importance otomatis    
-	-  Reduksi varians dibanding single tree
+ 
+- Robust terhadap noise dan outlier
+- Fitur importance otomatis    
+-  Reduksi varians dibanding single tree
 	
  **Kekurangan**:
-	- Waktu training lebih lama
-	-  Kompleksitas interpretasi manual
-	
-	---
-	
+ 
+- Waktu training lebih lama
+-  Kompleksitas interpretasi manual
+	 	
 4. **XGBoost**
 	Algoritma gradient boosting yang optimalkan model bertahap.
 	
  Parameter:
-	- learning_rate=0.05,   # Langkah pembelajaran presisi tinggi
-	- max_depth=4,          # Kedalaman terkontrol
-	-  n_estimators=300,     # Kompensasi learning rate kecil
-	- random_state=42       
+ 
+- learning_rate=0.05,   # Langkah pembelajaran presisi tinggi
+- max_depth=4,          # Kedalaman terkontrol
+-  n_estimators=300,     # Kompensasi learning rate kecil
+- random_state=42       
 	
  **Kelebihan**:
-	-  Akurasi tinggi untuk data kompleks
-	- Regularisasi bawaan (max_depth)
-	- Handle missing value otomatis
+ 
+-  Akurasi tinggi untuk data kompleks
+- Regularisasi bawaan (max_depth)
+-  Handle missing value otomatis
 	
  **Kekurangan**:
-	-  Waktu training panjang
-	-  Sensitif terhadap hyperparameter
-- **Pemilihan model terbaik** 
-	Berdasarkan Hasil Evaluasi pada data test Model terbaik adalah Logistic Regression
+ 
+-  Waktu training panjang
+-  Sensitif terhadap hyperparameter
+- **Pemilihan model terbaik**
+-  
+Berdasarkan Hasil Evaluasi pada data test Model terbaik adalah Logistic Regression
 	
 ## Evaluation
 
