@@ -111,15 +111,15 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 ## Modeling
 1. logistic Regression
    
-	**Kelebihan**:
+**Kelebihan**:
    
-	- Efisien untuk dataset kecil (sederhana dan mudah dilatih
-	-  Interpretasi koefisien mudah untuk analisis pengaruh fitur
+- Efisien untuk dataset kecil (sederhana dan mudah dilatih
+-  Interpretasi koefisien mudah untuk analisis pengaruh fitur
 
-	**Kekurangan**:
+**Kekurangan**:
 
-	- Hanya menangkap hubungan linear
-	-  Sensitif terhadap outlier
+- Hanya menangkap hubungan linear
+-  Sensitif terhadap outlier
     
 
 
@@ -129,11 +129,13 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	Algoritma berbasis pohon keputusan dengan pembagian rekursif.
 	
  Parameter:
-	- max_depth=7,          # Batasi kedalaman maksimum pohon
-	- min_samples_split=15, # Minimal 15 sampel untuk split node
-	- random_state=42       # Reproduksibilitas struktur
+ 
+- max_depth=7,          # Batasi kedalaman maksimum pohon
+- min_samples_split=15, # Minimal 15 sampel untuk split node
+- random_state=42       # Reproduksibilitas struktur
 	
  **Kelebihan**:
+ 
 	-  Menangkap hubungan non-linear
 	-  Tidak membutuhkan feature scaling
 	-  Visualisasi intuitif
