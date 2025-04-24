@@ -110,28 +110,35 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 
 ## Modeling
 1. logistic Regression
+   
 	**Kelebihan**:
+   
 	- Efisien untuk dataset kecil (sederhana dan mudah dilatih
-	-  Interpretasi koefisien mudah untuk analisis pengaruh fitur    
+	-  Interpretasi koefisien mudah untuk analisis pengaruh fitur
+
 	**Kekurangan**:
+
 	- Hanya menangkap hubungan linear
 	-  Sensitif terhadap outlier
     
 
----
+
 
 
 2. **Decision Tree **
 	Algoritma berbasis pohon keputusan dengan pembagian rekursif.
-	Parameter:
+	
+ Parameter:
 	- max_depth=7,          # Batasi kedalaman maksimum pohon
 	- min_samples_split=15, # Minimal 15 sampel untuk split node
 	- random_state=42       # Reproduksibilitas struktur
-	**Kelebihan**:
+	
+ **Kelebihan**:
 	-  Menangkap hubungan non-linear
 	-  Tidak membutuhkan feature scaling
 	-  Visualisasi intuitif
-	**Kekurangan**:
+	
+ **Kekurangan**:
 	- Rentan overfitting jika depth tidak diatur
 	-  Sensitif terhadap perubahan kecil data
 	    
@@ -140,16 +147,19 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
  
  3. **Random Forest**
 	Metode ensemble berbasis pohon keputusan yang menggabungkan banyak pohon untuk meningkatkan akurasi dan mengurangi overfitting
-	Parameter:
+	
+ Parameter:
 	- n_estimators=200,     # Jumlah pohon besar untuk stabilitas
 	- max_depth=12,         # Kedalaman fleksibel dengan kontrol
 	- min_samples_leaf=5,   # Minimal 5 sampel di leaf node
 	- random_state=42       
-	**Kelebihan**:
+	
+ **Kelebihan**:
 	- Robust terhadap noise dan outlier
 	- Fitur importance otomatis    
 	-  Reduksi varians dibanding single tree
-	**Kekurangan**:
+	
+ **Kekurangan**:
 	- Waktu training lebih lama
 	-  Kompleksitas interpretasi manual
 	
@@ -157,16 +167,19 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	
 4. **XGBoost**
 	Algoritma gradient boosting yang optimalkan model bertahap.
-	Parameter:
+	
+ Parameter:
 	- learning_rate=0.05,   # Langkah pembelajaran presisi tinggi
 	- max_depth=4,          # Kedalaman terkontrol
 	-  n_estimators=300,     # Kompensasi learning rate kecil
 	- random_state=42       
-	**Kelebihan**:
+	
+ **Kelebihan**:
 	-  Akurasi tinggi untuk data kompleks
 	- Regularisasi bawaan (max_depth)
 	- Handle missing value otomatis
-	**Kekurangan**:
+	
+ **Kekurangan**:
 	-  Waktu training panjang
 	-  Sensitif terhadap hyperparameter
 - **Pemilihan model terbaik** 
