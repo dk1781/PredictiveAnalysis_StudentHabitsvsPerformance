@@ -66,14 +66,19 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 4. Boxplot dan distribusi setiap variabel numerik
 	- Age
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424200916.png">
+ 
 	- study hours perday
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424200944.png">
+ 
 	- attendance percentage
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201004.png">
+ 
 	- sleephours
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201052.png">
+ 
 	- exercise frequency
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201112.png">
+ 
 
 	- mental health rating
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201131.png">
@@ -83,10 +88,12 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 
 	- screen time(Jumlah social media hours dan netflix hours)
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201200.png">
+ 
 
 	Seluruh variabel memiliki nilai yang cukup normal walaupun beberapa terdapat outlier akan tetapi nilai tersebut masih berada didalam rentang yang seharusnya
 5. Categorical Feature 
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201503.png">
+ 
 ## Data Preparation
 - Map Exam Score
 	Memetakan kolom Exam Score menjadi "Pass" dan "Faill" untuk  dijadikan targer klasifikasi dimana exam_score >= 70 adalah "Pass"
@@ -94,6 +101,7 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	fitur kategori yang bertipe object di rubah menjadi numerik agar model mengenali data kategorikal
 - Feature Selection
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424231629.png">
+ 
 	Kolom study_hours_per_day,mental_health_rating, screen_time dipilih karena memiliki nilai korelasi yang paling tinggi baik itu positif atau negatif. itu artinya Fitur inilah yang paling berpengaruh pada kelulusan
 - Split dataset
 	Membagi dataset menjadi train dan test dengan rasio 80 : 20 dilakukan guna melakukan tahap training pada model menggunakan data train, lalu melakukan tahap evaluasi menggunakan data test
@@ -114,11 +122,11 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 
 2. **Decision Tree dengan Kontrol Kompleksitas**
 	
-	Algoritma berbasis pohon keputusan dengan pembagian rekursif.
+Algoritma berbasis pohon keputusan dengan pembagian rekursif.
 	
-	### Parameter:
-	- max_depth=7,          # Batasi kedalaman maksimum pohon
-	- min_samples_split=15, # Minimal 15 sampel untuk split node
+ Parameter:
+ - max_depth=7,          # Batasi kedalaman maksimum pohon
+ - min_samples_split=15, # Minimal 15 sampel untuk split node
 	- random_state=42       # Reproduksibilitas struktur
 	
 	**Kelebihan**:
@@ -173,34 +181,44 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 1. Confussion Matrix
 	**_Confusion matrix_** adalah alat untuk mengevaluasi kinerja model klasifikasi dengan menunjukkan jumlah prediksi yang benar dan salah dalam format tabel. Ini memberikan pandangan yang lebih rinci tentang cara model berperforma di berbagai kelas.
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230256.png">
+ 
 2. Akurasi
 	**Akurasi** adalah metrik yang paling sederhana dan sering digunakan untuk mengukur kinerja model klasifikasi. Akurasi dihitung sebagai proporsi dari prediksi benar (baik positif maupun negatif) terhadap seluruh prediksi yang dilakukan oleh model.
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230111.png">
+ 
 3. F1 Score
 	**F1-Score** adalah metrik yang menggabungkan presisi dan recall menjadi satu nilai tunggal yang mempertimbangkan keduanya. F1-Score adalah rata-rata harmonis dari presisi dan recall, memberikan gambaran yang lebih baik ketika ada _trade-off_ antara keduanya.
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230454.png">
+ 
 4. Precission
 	**_Precision_** mengukur seberapa baik model menghindari positif palsu (false positives, FP). Ini adalah rasio prediksi positif yang benar terhadap semua prediksi positif yang dibuat oleh model
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230429.png">
+ 
 5. Recall
 	**_Recall_** atau **sensitivitas** adalah metrik yang mengukur seberapa baik model dapat menangkap semua contoh positif. Ini adalah rasio prediksi positif yang benar terhadap semua kasus positif yang sebenarnya ada dalam data.
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230144.png">
+ 
 6. Cross-Validation
 	Teknik ini membagi data menjadi beberapa subset yang dikenal sebagai **_fold_**. Model dilatih dalam beberapa subset serta diuji pada subset yang tersisa dan proses ini diulang beberapa kali. Jika performa model sangat bervariasi antara **_fold_**, ini menunjukkan bahwa model mengalami overfitting pada subset data tertentu dan tidak dapat menggeneralisasi dengan baik. _Cross-validation_ membantu memastikan bahwa model dinilai secara lebih konsisten di seluruh data.
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230539.png">
+ 
 
 ### Hasil Evaluasi
+
 <img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424231028.png">
+
 - Logistic Regression
-	
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230654.png">
 
 - Decission Tree
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230818.png">
+ 
 - Random Forest
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230835.png">
+ 
 - XGBoost
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424230842.png">
+ 
 
 - Perbandingan Akurasi serta crosvall setiap Model
 	
