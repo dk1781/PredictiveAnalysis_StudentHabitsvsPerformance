@@ -189,8 +189,9 @@ Parameter:
  
 -  Waktu training panjang
 -  Sensitif terhadap hyperparameter
-- **Pemilihan model terbaik**
--  
+
+  
+**Pemilihan model terbaik**
 Berdasarkan Hasil Evaluasi pada data test Model terbaik adalah Logistic Regression
 	
 ## Evaluation
