@@ -62,24 +62,33 @@ Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](http
 2. Mengecek missing value dan duplicate value
 	Dalam dataset ini terdapat missing value pada kolom `parental_education_level` sebanyak 91. Missing value tersebut kita isi dengan nilai modusnya( Nilai yang paling sering muncul). Sedangkan untuk duplicated data tidak ada .
 3. Mengecek deskripsi statistik menggunakan`.describe()`
-	![[Pasted image 20250424200512.png]] Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang salah
+	
+![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/20250424200512.png) Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang salah
 4. Boxplot dan distribusi setiap variabel numerik
-	- Age
-	![[Pasted image 20250424200916.png]]
-	- study hours perday
-	![[Pasted image 20250424200944.png]]
-	- attendance percentage
-	![[Pasted image 20250424201004.png]]
-	- sleephours
-	![[Pasted image 20250424201052.png]]
-	- exercise frequency
-	![[Pasted image 20250424201112.png]]
-	- mental health rating
-	![[Pasted image 20250424201131.png]]
-	- exam score
-	![[Pasted image 20250424201144.png]]
-	- screen time(Jumlah social media hours dan netflix hours)
-	![[Pasted image 20250424201200.png]]
+	- Age  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504200916.png)
+	
+	- study hours perday  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504200944.png)
+	
+	- attendance percentage  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201004.png)
+	
+	- sleephours  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201052.png)
+	
+	- exercise frequency  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201112.png)
+	
+	- mental health rating  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201131.png)
+	
+	- exam score  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201144.png)
+	
+	- screen time (social media + Netflix)  
+	  ![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%20202504201200.png)
+
 
 	Seluruh variabel memiliki nilai yang cukup normal walaupun beberapa terdapat outlier akan tetapi nilai tersebut masih berada didalam rentang yang seharusnya
 5. Categorical Feature 
