@@ -54,13 +54,13 @@ Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](http
 
 **EDA**:
 1. Mengecek informasi pada dataset menggunakan `.info()`
-	![[Pasted image 20250424195500.png]]
+	<img src="https://github.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/blob/9e5bb54d37d0690762fe977c2d986200af71f419/images/Pasted%20image%2020250424195500.png">
 	Dari gambar diatas dapat kita lihat ada missing value pada kolom `parental_education_level`
-2. Mengecek missing value dan duplicate value
+3. Mengecek missing value dan duplicate value
 	Dalam dataset ini terdapat missing value pada kolom `parental_education_level` sebanyak 91. Missing value tersebut kita isi dengan nilai modusnya( Nilai yang paling sering muncul). Sedangkan untuk duplicated data tidak ada .
-3. Mengecek deskripsi statistik menggunakan`.describe()`
+4. Mengecek deskripsi statistik menggunakan`.describe()`
 	![[Pasted image 20250424200512.png]] Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang salah
-4. Boxplot dan distribusi setiap variabel numerik
+5. Boxplot dan distribusi setiap variabel numerik
 	- Age
 	![[Pasted image 20250424200916.png]]
 	- study hours perday
@@ -79,7 +79,7 @@ Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](http
 	![[Pasted image 20250424201200.png]]
 
 	Seluruh variabel memiliki nilai yang cukup normal walaupun beberapa terdapat outlier akan tetapi nilai tersebut masih berada didalam rentang yang seharusnya
-5. Categorical Feature 
+6. Categorical Feature 
 	![[Pasted image 20250424201503.png]]
 ## Data Preparation
 - Map Exam Score
