@@ -55,7 +55,8 @@ Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](http
 **EDA**:
 1. Mengecek informasi pada dataset menggunakan `.info()`
 	
- 	<img src="https://github.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/blob/9e5bb54d37d0690762fe977c2d986200af71f419/images/Pasted%20image%2020250424195500.png">
+ 	![](https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/main/images/Pasted%20image%2020250424195500.png)
+
 	
  	Dari gambar diatas dapat kita lihat ada missing value pada kolom `parental_education_level`
 2. Mengecek missing value dan duplicate value
