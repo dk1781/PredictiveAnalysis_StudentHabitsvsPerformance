@@ -27,7 +27,7 @@ Berdasarkan Problem Statement tersebut tujuan yang harus dicapai adalah:
 - Menggukur performa model menggunakan f1 score, precission, recall, dan confussion matrix, untuk memilih model terbaik berdasarkan akurasi tertinggi.
 
 ## Data Understanding
-Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance/data). Dengan 1.000 catatan siswa sintetis dan 15+ fitur termasuk jam belajar, pola tidur, penggunaan media sosial, kualitas diet, kesehatan mental, dan nilai ujian akhir. Dibuat menggunakan pola realistis untuk praktik pendidikan.
+Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance/data). Dengan 1.000 catatan siswa sintetis dan 16 fitur termasuk jam belajar, pola tidur, penggunaan media sosial, kualitas diet, kesehatan mental, dan nilai ujian akhir. 1000 baris dan 16 kolom.
 
 ### Variabel-variabel pada Student Habits vs Performance dataset
 
@@ -36,30 +36,30 @@ Dataset yang digunakan berasal dari kaggle yang dapat diakses pada [Kaggle](http
 | ------------------------------- | ------------------------------------ |
 | `student_id`                    | ID unik siswa (tidak untuk analisis) |
 | `age`                           | Usia siswa (17-24 tahun)             |
-| `gender`                        | Male/Female/Other                    |
-| `study_hours_per_day`           | Rata-rata jam belajar harian         |
-| `social_media_hours`            | Waktu harian di media sosial         |
-| `netflix_hours`                 | Waktu menonton Netflix               |
-| `part_time_job`                 | Yes/No                               |
-| `attendance_percentage`         | Persentase kehadiran kelas (0-100%)  |
+| `gender`                        | Jenis kelamin siswa Male/Female/Other                    |
+| `study_hours_per_day`           | Rata-rata lama waktu jam belajar harian siswa        |
+| `social_media_hours`            | Rata-rata lama waktu siswa di sosial media    |
+| `netflix_hours`                 | Rata-rata lama waktu siswa menonton Netflix               |
+| `part_time_job`                 | status part time siswa Yes/No                               |
+| `attendance_percentage`         | Persentase kehadiran dikelas (0-100%)  |
 | `sleep_hours`                   | Rata-rata jam tidur harian           |
-| `diet_quality`                  | Poor/Fair/Good                       |
+| `diet_quality`                  | Kualitas diet siswa (Poor/Fair/Good )                      |
 | `exercise_frequency`            | Frekuensi olahraga per minggu (0-7)  |
 | `parental_education_level`      | jejang edukasi orang tua             |
-| `internet_quality`              | Poor/Average/Good/Excellent          |
-| `mental_health_rating`          | Skala 1-10                           |
-| `extracurricular_participation` | Yes/No                               |
+| `internet_quality`              | Kualitas internet yang dimiliki Poor/Average/Good/Excellent          |
+| `mental_health_rating`          | Status kesehatan mental dalam Skala 1-10                           |
+| `extracurricular_participation` | Status mengikuti kegiatan extrakulikulerYes/No                               |
 | `exam_score`                    | Nilai ujian akhir (0-100)            |
 
 
 **EDA**:
 1. Mengecek informasi pada dataset menggunakan `.info()`
 	
- 	<img src="https://github.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/blob/9e5bb54d37d0690762fe977c2d986200af71f419/images/Pasted%20image%2020250424195500.png">
+ 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424195500.png">
 	
  	Dari gambar diatas dapat kita lihat ada missing value pada kolom `parental_education_level`
 2. Mengecek missing value dan duplicate value
-	Dalam dataset ini terdapat missing value pada kolom `parental_education_level` sebanyak 91. Missing value tersebut kita isi dengan nilai modusnya( Nilai yang paling sering muncul). Sedangkan untuk duplicated data tidak ada .
+	Dalam dataset ini terdapat missing value pada kolom `parental_education_level` sebanyak 91. Sedangkan untuk duplicated data tidak ada .
 3. Mengecek deskripsi statistik menggunakan`.describe()`
  	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424200512.png">
 Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang salah
@@ -95,9 +95,18 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 	<img src="https://raw.githubusercontent.com/dk1781/PredictiveAnalysis_StudentHabitsvsPerformance/refs/heads/main/images/Pasted%20image%2020250424201503.png">
  
 ## Data Preparation
+- Handle Missing Value
+  
+  	 Missing value pada kolom `parental_education_level` kita isi dengan nilai modusnya( Nilai yang paling sering muncul).
+  
+- Drop kolom student_id
+	Kolom dihapus karena tidak akan digunakan dan malah akan menganggu proses klasifikasi
+ 
+- Membuat kolom screen time 
+	yaitu jumlah dari waktu yang digunakan untuk social media dan netflix lalu mendrop kolom netflix_hours dan social_media_hours 
 - Map Exam Score
   
-	Memetakan kolom Exam Score menjadi "Pass" dan "Faill" untuk  dijadikan targer klasifikasi dimana exam_score >= 70 adalah "Pass"
+	Memetakan kolom Exam Score ke kolom exam resul menjadi "Pass" dan "Faill" untuk  dijadikan targer klasifikasi dimana exam_score >= 70 adalah "Pass". lalu drop kolom exam scorenya
 - Encoding Feature Kategorikal
   
 	fitur kategori yang bertipe object di rubah menjadi numerik agar model mengenali data kategorikal
@@ -116,6 +125,16 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 ## Modeling
 
 1. logistic Regression
+	Algoritma yang bertujuan untuk memprediksi probabilitas bahwa suatu instance termasuk dalam kelas tertentu atau tidakdengan cara menganalisis hubungan antara dua faktor data.
+
+Parameter:
+   
+- penalty='l2', #Parameter penalty yang akan diterapkan untuk mencegah overfitting.
+- C=0.5,#inverse dari kekuatan regularisasi. Ini adalah parameter positif yang mengontrol seberapa kuat penalti regularisasi diterapkan
+- solver='liblinear',#lgoritma optimasi yang akan digunakan untuk menemukan nilai koefisien yang optimal. 
+- max_iter=2000,#jumlah maksimum iterasi yang akan dilakukan oleh algoritma solver untuk mencapai konvergensi.
+
+    random_state=42 # Reproduksibilitas struktur mengontrol keacakan dalam algoritma.
    
 **Kelebihan**:
    
@@ -132,13 +151,13 @@ Saat kita lihat statistik tidak terdapat nilai berupa outlier atau nilai yang sa
 
 
 2. **Decision Tree **
-	Algoritma berbasis pohon keputusan dengan pembagian rekursif.
+	Algoritma berbasis pohon keputusan dengan pembagian rekursif.digunakan untuk memprediksi nilai kontinu dari variabel dependen berdasarkan variabel independen.
 	
  Parameter:
  
 - max_depth=7,          # Batasi kedalaman maksimum pohon
 - min_samples_split=15, # Minimal 15 sampel untuk split node
-- random_state=42       # Reproduksibilitas struktur
+- random_state=42       # Reproduksibilitas struktur mengontrol keacakan dalam algoritma.
 	
  **Kelebihan**:
  
@@ -175,7 +194,7 @@ Parameter:
 -  Kompleksitas interpretasi manual
 	 	
 4. **XGBoost**
-	Algoritma gradient boosting yang optimalkan model bertahap.
+	Algoritma gradient boosting yang optimalkan model bertahap.algoritma boosting yang sangat kuat untuk tugas klasifikasi dan regresi. XGBoost dirancang untuk efisiensi, fleksibilitas, dan performa tinggi.
 	
  Parameter:
  
